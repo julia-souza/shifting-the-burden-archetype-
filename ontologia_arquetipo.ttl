@@ -1,0 +1,193 @@
+@prefix : <http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/> .
+
+<https://purl.org/julia/shiftingTheOnto> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/desencadeia
+:desencadeia rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Percepção_de_urgência ,
+                         :Sintoma_do_problema .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/gera_uma
+:gera_uma rdf:type owl:ObjectProperty ;
+          rdfs:domain :Abordagem_da_Causa_do_Problema ,
+                      :Consciência_dos_Efeitos_Colaterais ,
+                      :Consciência_dos_Efeitos_Colaterais_dos_Stakeholders ,
+                      :Dependência_da_Solução_Sintomática ,
+                      :Percepção_de_Urgência_dos_Stakeholders ,
+                      :Percepções_dos_Stakeholders_sobre_as_Prioridades ,
+                      :Solução_Fundamental ,
+                      :Solução_Sintomática .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/influencia_em
+:influencia_em rdf:type owl:ObjectProperty ;
+               rdfs:domain :Causa_do_Problema ,
+                           :Decisão_de_Alocação_de_Recursos ,
+                           :Prioridades_Organizacionais_ou_Sociais ,
+                           :Recursos_para_a_Solução ,
+                           :Solução_Fundamental .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/interpreta
+:interpreta rdf:type owl:ObjectProperty ;
+            rdfs:domain :Percepção_de_urgência ,
+                        :Sintoma_do_problema .
+
+
+###  https://purl.org/julia/shiftingTheOnto#retorna_a/ao
+<https://purl.org/julia/shiftingTheOnto#retorna_a/ao> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain :Sintoma_do_problema .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Abordagem_da_Causa_do_Problema
+:Abordagem_da_Causa_do_Problema rdf:type owl:Class ;
+                                rdfs:subClassOf :Ocorrência ;
+                                rdfs:comment "A ação de implementar a solução fundamental" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Causa_do_Problema
+:Causa_do_Problema rdf:type owl:Class ;
+                   rdfs:subClassOf :Ocorrência ;
+                   rdfs:comment "A causa raiz do sintoma do problema." .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Consciência
+:Consciência rdf:type owl:Class ;
+             rdfs:subClassOf :Efeito_Colateral .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Consciência_dos_Efeitos_Colaterais
+:Consciência_dos_Efeitos_Colaterais rdf:type owl:Class ;
+                                    rdfs:subClassOf :Consciência ;
+                                    rdfs:comment "Realização de que a solução sintomática tem consequências não intencionais" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Consciência_dos_Efeitos_Colaterais_dos_Stakeholders
+:Consciência_dos_Efeitos_Colaterais_dos_Stakeholders rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Consciência ;
+                                                     rdfs:comment "Como os diversos stakeholders percebem e interpretam esses efeitos colaterais" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Decisão_de_Alocação_de_Recursos
+:Decisão_de_Alocação_de_Recursos rdf:type owl:Class ;
+                                 rdfs:subClassOf :Efeito_Colateral ;
+                                 rdfs:comment "Como os recursos são atribuídos e priorizados" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Dependência_da_Solução_Sintomática
+:Dependência_da_Solução_Sintomática rdf:type owl:Class ;
+                                    rdfs:comment "Dependência excessiva da correção rápida, que pode levar a um ciclo de recorrência" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Efeito_Colateral
+:Efeito_Colateral rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Influências_Externas_sobre_a_Solução_Fundamental
+:Influências_Externas_sobre_a_Solução_Fundamental rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Solução ;
+                                                  rdfs:comment "Fatores externos que podem afetar a implementação ou a eficácia da solução fundamental" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Influências_Externas_sobre_a_Solução_Sintomática
+:Influências_Externas_sobre_a_Solução_Sintomática rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Solução ;
+                                                  rdfs:comment "Fatores externos que podem afetar o uso ou a eficácia da solução sintomática" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Ocorrência
+:Ocorrência rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Percepção
+:Percepção rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Percepção_de_Urgência_dos_Stakeholders
+:Percepção_de_Urgência_dos_Stakeholders rdf:type owl:Class ;
+                                        rdfs:subClassOf :Percepção ;
+                                        rdfs:comment "Como os diversos stakeholders interpretam a urgência da situação" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Percepção_de_urgência
+:Percepção_de_urgência rdf:type owl:Class ;
+                       rdfs:subClassOf :Percepção ;
+                       rdfs:comment "A sensação imediata de necessidade de resolver o problema" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Percepções_dos_Stakeholders_sobre_a_Resistência
+:Percepções_dos_Stakeholders_sobre_a_Resistência rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Percepção ;
+                                                 rdfs:comment "Como os diversos stakeholders percebem e interpretam essas barreiras." .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Percepções_dos_Stakeholders_sobre_as_Prioridades
+:Percepções_dos_Stakeholders_sobre_as_Prioridades rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Percepção ;
+                                                  rdfs:comment "Como os diversos stakeholders percebem e interpretam essas prioridades." .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Prioridades_Organizacionais_ou_Sociais
+:Prioridades_Organizacionais_ou_Sociais rdf:type owl:Class ;
+                                        rdfs:comment "Os objetivos e valores maiores da organização ou sociedade, que podem afetar a alocação de recursos" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Problema
+:Problema rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Recursos_para_a_Solução
+:Recursos_para_a_Solução rdf:type owl:Class ;
+                         rdfs:comment "As entradas necessárias (exemplo: dinheiro, tempo, especialização, etc.) para implementar a solução fundamental" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Resistência_à_Mudança
+:Resistência_à_Mudança rdf:type owl:Class ;
+                       rdfs:subClassOf :Ocorrência ;
+                       rdfs:comment "As barreiras para implementar a solução fundamental, que podem ser culturais, econômicas, ou baseadas em outros fatores sistêmicos" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Sintoma_do_problema
+:Sintoma_do_problema rdf:type owl:Class ;
+                     rdfs:subClassOf :Ocorrência ;
+                     rdfs:comment "A questão que precisa ser resolvida" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Solução
+:Solução rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Solução_Fundamental
+:Solução_Fundamental rdf:type owl:Class ;
+                     rdfs:subClassOf :Solução ;
+                     rdfs:comment "A solução adequada, muitas vezes mais difícil ou demorada, que aborda a causa raiz do problema" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Solução_Sintomática
+:Solução_Sintomática rdf:type owl:Class ;
+                     rdfs:subClassOf :Solução ;
+                     rdfs:comment "Uma correção rápida para aliviar o problema a curto prazo" .
+
+
+###  http://www.semanticweb.org/julia/ontologies/2023/6/untitled-ontology-8/Tempo
+:Tempo rdf:type owl:Class ;
+       rdfs:comment "O elemento temporal, crucial para entender a dinâmica entre soluções sintomáticas e fundamentais" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
